@@ -16,9 +16,10 @@ private:
     unsigned int count;                 // count
 
 public:
-    Counter():count(0)                  //constructor
+    Counter():count(0)                  //constructor no ARGUMENTS
     {};
-
+    Counter(int c):count(c)             //constructor with one arg
+    {}
     unsigned int get_count()
     {
         return count;
@@ -29,9 +30,9 @@ public:
     Counter operator ++()                  // increment prefix
     {
         ++count;
-        Counter temp;
-        temp.count = count;
-        return temp;
+
+        return Counter(count);
+
     }
 
 };
